@@ -1,26 +1,16 @@
-const https = require('https');
-const fetchData=(value,res)=>{
-    console.log(`https://animechan.vercel.app/api/quotes/anime?title=${value}`);
-    const api=`https://animechan.vercel.app/api/quotes/anime?title=${value}`
-    let data="";
-  
-    https.get(api,(response)=>{
-  
-   response.on('data',(chuck)=>{
-        data+=chuck;
-    })
-    response.on('end',()=>{
-      
-       // 
-       console.log((JSON.stringify(data)))
-    res.end((JSON.stringify(data)));
-    res.writeHead(303,{"Location":"/"});
- 
+const https = require("https");
+const fetchData = (value, res) => {
+  const api = `https://api.themoviedb.org/3/search/movie?&api_key=e4e72d82643e224bf78695be0b5602cd&query=${value}`;
+  let data = "";
 
-    })
-      
-  })
-
-   
-}
-module.exports=fetchData;
+  https.get(api, (response) => {
+    response.on("data", (chuck) => {
+      data += chuck;
+    });
+    response.on("end", () => {
+      console.log(JSON.parse(data), typeof JSON.parse(data));
+      res.end(data);
+    });
+  });
+};
+module.exports = fetchData;
