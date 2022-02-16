@@ -14,7 +14,6 @@ const publicHandler=(res)=>{
         }
         else{
             res.writeHead(200,{'Content-type':`text/css`})
-            console.log('mydata',data);
             res.end(data);
         }
     })

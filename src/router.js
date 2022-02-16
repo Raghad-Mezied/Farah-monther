@@ -2,6 +2,7 @@ const HomeHandler=require('./handlers/homeHandler');
 const publicHandler=require('./handlers/publicHandler');
 const handlerJson=require('./handlers/handlerJson');
 const  jsHandler =require('./handlers/jshandler')
+const getSearchValue=require('./handlers/getSearchValue')
 const router =(req,res)=>{
 
 let endPoint=req.url;
@@ -12,8 +13,8 @@ else if (endPoint==="/css/style.css"){
     publicHandler(res)
 
 }
-else if (endPoint === '/search'&& req.method ==="POST"){
-   
+else if (endPoint === '/search'&& req.method ==="GET"){
+    //getSearchValue(req,res);
     handlerJson(res);
   
 }
