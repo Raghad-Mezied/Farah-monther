@@ -4,16 +4,17 @@ const type={
     css:"text",
     js:"text"
 }
-const publicHandler=(res)=>{
+const publicHandler=(res,endPoint)=>{
+    const extension =endPoint.split(".")[1];
 
-    const filePath=path.join(__dirname,'..','..','public','css','style.css');
+    const filePath=path.join(__dirname,'..','..','public',endPoint);
     fs.readFile(filePath,(error,data)=>{
         if(error){
             console.log(error);
 
         }
         else{
-            res.writeHead(200,{'Content-type':`text/css`})
+            res.writeHead(200,{'Content-type':`${type[extension]}/${extension}`})
             res.end(data);
         }
     })
