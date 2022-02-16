@@ -18,6 +18,13 @@ else if (endPoint === '/search'&& req.method ==="GET"){
     handlerJson(res);
   
 }
+else if (endPoint === '/search'&& req.method ==="POST"){
+   
+    
+    getSearchValue(req,res);
+ 
+  
+}
 if(endPoint=== "/js/script.js"){
     jsHandler(res) 
 }
