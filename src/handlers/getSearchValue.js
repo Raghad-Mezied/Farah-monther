@@ -14,7 +14,7 @@ const getSearchValue=(req,res)=>{
         const{search}= convertedData ;
         console.log('value',search);
         
-        console.log('valueeeee',fetchData(search,api))
+       fetchData(search,api)
         res.writeHead(303,{"Location":"/"});
 
             res.end();
