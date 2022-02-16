@@ -24,6 +24,8 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "env": "^0.0.2",
+    "env2": "^2.2.2",
     "node-fetch": "2.0",
     "node-fetch-npm": "^2.0.4"
   }
