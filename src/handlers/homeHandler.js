@@ -10,7 +10,6 @@ const homeHandler=(res)=>{
             }
             else{
                 res.writeHead(200,{'Content-type':'text/html'})
-                console.log('mydata',data);
                 res.end(data);
             }
         })

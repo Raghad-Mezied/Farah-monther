@@ -2,6 +2,7 @@ const path=require('path')
 const fs=require('fs');
 
 const handlerJson=(res)=>{
+    console.log('I am here')
    
     const filePath=path.join(__dirname,'..','..','movies.json')
     fs.readFile(filePath,(error,data)=>{
@@ -10,7 +11,7 @@ const handlerJson=(res)=>{
 
         }
         else{
-            console.log("iam here")
+           
             res.writeHead(200,{'Content-type':'application/json'})
                     //console.log("data",JSON.stringify(data));
             res.end(data);
