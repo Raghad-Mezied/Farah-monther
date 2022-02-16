@@ -2,7 +2,7 @@ const querystring = require('querystring');
 const fetchData=require('./fetchData');
 const api= "https://animechan.vercel.app/api/quotes/anime?title="
 const getSearchValue=(req,res)=>{
-    console.log('my datat is here')
+
     let allData="";
     req.on('data',chuckdata=>{
         allData+=chuckdata;
