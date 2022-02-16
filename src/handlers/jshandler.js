@@ -11,7 +11,7 @@ const jsHandler=(res)=>{
         }
         else{
             res.writeHead(200,{'Content-type':`text/js`})
-            console.log('mydata',data);
+            
             res.end(data);
         }
     })
