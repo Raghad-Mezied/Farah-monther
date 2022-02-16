@@ -7,7 +7,7 @@ const handlerJson=(res)=>{
     const filePath=path.join(__dirname,'..','..','movies.json')
     fs.readFile(filePath,(error,data)=>{
         if(error){
-            console.log(error);
+            console.log("erroe",error);
 
         }
         else{
