@@ -1,22 +1,26 @@
-const fetch = require('node-fetch');
-//import fetch from 'node-fetch';
-const fetchData=(value,api)=>{
-    let array=[];
-fetch(api+value, { method: 'GET'})
-/*.then(res=>{
-    console.log(res.ok);
-        console.log(res.status);
-        console.log(res.statusText);
-        console.log(res.headers.raw());
-        console.log(res.headers.get('content-type'));
-})*/
-.then((res)=>res.json())
-.then((res)=>{
-    console.log(res[0].quote)
-   array.push(res[0].quote);
-    
-})
-console.log("I am here",array);
+const https = require('https');
+const fetchData=(value,res)=>{
+    console.log(`https://animechan.vercel.app/api/quotes/anime?title=${value}`);
+    const api=`https://animechan.vercel.app/api/quotes/anime?title=${value}`
+    let data="";
+  
+    https.get(api,(response)=>{
+  
+   response.on('data',(chuck)=>{
+        data+=chuck;
+    })
+    response.on('end',()=>{
+      
+       // 
+       console.log((JSON.stringify(data)))
+    res.end((JSON.stringify(data)));
+    res.writeHead(303,{"Location":"/"});
+ 
 
+    })
+      
+  })
+
+   
 }
 module.exports=fetchData;
