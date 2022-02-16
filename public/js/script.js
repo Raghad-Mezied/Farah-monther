@@ -1,6 +1,7 @@
 console.log("i AM IN CJS FILE");
 const input = document.getElementById("input");
-const btn=document.getElementById("btn")
+const btn=document.getElementById("btn");
+const list = document.getElementById("list");
 const getData = (e) => {
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
@@ -14,9 +15,17 @@ const getData = (e) => {
         let newArray=data.filter((ele)=>{
             return ele["name"].startsWith(e.target.value)
         })
+        list.textContent = "";
+        newArray.forEach((element) => {
+          const option = document.createElement("option");
+          option.value= element.name;
+          option.text = element.name;
+          list.appendChild(option);
+
+        })
         console.log(newArray);
         newArray.forEach(element => {
-            /////Dom is here
+           
             
         });
       }
@@ -35,9 +44,9 @@ const getData2 = () => {
     if (xhr.readyState === 4) {
     console.log('hello')
     if (xhr.status === 200) {
-        console.log(xhr.responseText);
-        const data = JSON.parse(xhr.responseText);
-        console.log("DATA",data);
+      console.log(xhr)
+        const data = JSON.parse(xhr.response);
+        console.log(typeof(data), data, 2);
        
         
       }
