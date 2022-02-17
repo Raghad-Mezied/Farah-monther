@@ -1,6 +1,6 @@
 const https = require("https");
 const fetchData = (value, res) => {
-  const api = `https://api.themoviedb.org/3/search/movie?&api_key=e4e72d82643e224bf78695be0b5602cd&query=${value}`;
+  const api = `https://api.themoviedb.org/3/search/movie?&api_key=${process.env.API_KEY}&query=${value}`;
   let data = "";
 
   https.get(api, (response) => {
