@@ -1,7 +1,7 @@
 {
   "name": "farah-monther",
   "version": "1.0.0",
-  "description": "",
+  "description": "- [Links](#demo)\r - [Purpose](#purpose)\r - [User Stories](#user-stories)\r - [User Journey](#user-journey)\r - [Tech Stack](#tech-stack)\r - [Team Members](#team-members)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
